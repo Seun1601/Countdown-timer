@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
+import {useState} from 'react';
+
+
+
+
+
 
 const cards = (props) => {
+
   return (
     <div className="card-gangan text-white flex flex-col justify-between items-center w-full ">  
 
