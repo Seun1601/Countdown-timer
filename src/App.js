@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Cards from "./cards";
 import Footer from "./footer";
+import timer from "./timer";
 
 const defaultTime = {
   seconds: "00",
@@ -12,19 +13,7 @@ const defaultTime = {
 function App() {
   
   
-  const [remainingTime, setRemainingTime] = useState(defaultTime);
-
-  useEffect(() => {
-    const intId = setInterval(() => {
-      updateRemainingTime();
-    }, 1000);
-
-    return () => clearInterval(intId);
-  }, []);
-
-  function updateRemainingTime(){
-      
-  }
+  
 
   return (
     <div className="App min-w-screen min-h-screen flex flex-col  items-center justify-between p-24 font-redHat bg-cover bg-center" >
@@ -32,6 +21,8 @@ function App() {
           <h2 className="text-white text-3xl text-white-600">WE'RE LAUNCHING SOON</h2>
       </div>
       <div className="grid grid-cols-4 gap-4 w-screen px-5  h-60 mb-16 p-2">
+      <Timer 
+      countdownStop = {1800108000000}/>
       <Cards time={defaultTime.days} countBy={"DAYS"}/>
       <Cards time={defaultTime.hours} countBy={"HOURS"}/>
       <Cards time={defaultTime.minutes} countBy={"MINUTES"}/>
